@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  line-height: 1.6;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Pixel Art Styles */
+.pixel-border {
+  border-style: solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="%23616161"/></svg>') 2;
+}
+
+.minecraft-button {
+  background: linear-gradient(to bottom, #8D6E63 0%, #6D4C41 100%);
+  border: 2px solid #5D4037;
+  box-shadow: 2px 2px 0px #3E2723;
+  transition: all 0.1s;
+}
+
+.minecraft-button:hover {
+  background: linear-gradient(to bottom, #A1887F 0%, #8D6E63 100%);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #3E2723;
+}
+
+.minecraft-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.grass-block {
+  background: linear-gradient(to bottom, #7CB342 0%, #689F38 50%, #558B2F 100%);
+}
+
+.stone-block {
+  background: linear-gradient(to bottom, #9E9E9E 0%, #757575 50%, #616161 100%);
+}
+
+.gold-block {
+  background: linear-gradient(to bottom, #FFD700 0%, #FFC107 50%, #FF8F00 100%);
+}
+
+.redstone-glow {
+  box-shadow: 0 0 10px #F44336, 0 0 20px #F44336;
+}
+
+/* Pixelated animations */
+@keyframes pixelPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pixel-pulse {
+  animation: pixelPulse 2s infinite;
+}
+
+/* Block texture patterns */
+.dirt-texture {
+  background-image: 
+    radial-gradient(circle at 25% 25%, #8D6E63 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, #6D4C41 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-color: #795548;
+}
+
+.grass-texture {
+  background-image: 
+    linear-gradient(90deg, #7CB342 50%, #689F38 50%),
+    linear-gradient(#7CB342 50%, #689F38 50%);
+  background-size: 4px 4px;
+}
+
+/* Disable smooth scrolling for pixel perfect movement */
+html {
+  scroll-behavior: auto;
+}
